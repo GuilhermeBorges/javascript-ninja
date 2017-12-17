@@ -17,6 +17,13 @@ var aula4 = ```
 1 == '1' -> true
 1 === '1' -> false 
 Javascript é uma linguagem de tipagem fraca e dinâmica
+<, >, <=, >=
+```
+
+// -- AULA 1.05: Funções ----------------------------------------------
+var aula5 = ```
+Sintaxe e semântica de como criar uma função (argumentos, return, e outra coisas )
+Um pouquinho sobre escopo de variável
 ```
 
 // -- AULA 1.05: Operadoes de Igualdade e relacionais ------------------
