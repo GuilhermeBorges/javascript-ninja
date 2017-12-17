@@ -72,4 +72,15 @@
     // Invoque a função criada acima, passando os parâmetros 10 e 2.
     divisao(10, 2);
 
+
+
+
+
 // -- AULA 2.01 Operadores lógicos -------------------------------------
+
+    var aula7 = ```
+    ou e and
+    ```
+/// -- AULA 2.02: Operadores unários
+    var aula8 = ``` 
+    ```
