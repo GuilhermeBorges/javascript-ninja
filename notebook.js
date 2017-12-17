@@ -81,11 +81,29 @@
     var aula7 = ```
     ou e and
     ```
-/// -- AULA 2.02: Operadores unários -----------------
+// -- AULA 2.02: Operadores unários ------------------------------------
     var aula8 = ``` 
     +'3' -> converte em string
     ='kjalj' -> NaN
     '3' + 3 -> '33'
     3 + '3' -> '33'
     ```
-/// -- AULA 2.02: Operadores unários -----------------
+// -- AULA 2.03: Estrutura Léxica --------------------------------------
+    var aula9 = ```
+     - Diz qual é o nível mais baixo da linguagem, como criamos comentários, como separamos uma linguagem de outra e etc
+     - JS é Case Sensitive
+     - Comentários de linha e de bloco
+     - Literais são valores que não mudam, que fazem parte do crore
+        - 12 (números, strings, false, true, array, [1,2], {av:1}, etc)
+     - Identificadores
+        - Aquilo que podemos usar para criar variáveis: podemos começar com _, -, $, a-z, A-Z, 0-9
+        - Pode considerar qualquer caractere unicode
+            - þ = 1
+            - π = 3.14
+            - Funciona mas não usa carai! uesheae Vai atraplhar os amiguinhos
+     - 
+    ```
+
+// -- AULA 2.04: Estrutura Léxica --------------------------------------
+// -- AULA 2.05: Estrutura Léxica --------------------------------------
+// -- AULA 2.06: Estrutura Léxica --------------------------------------
