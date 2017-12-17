@@ -9,16 +9,14 @@ var aula2 = ```
 
 
 // -- AULA 1.03: Operadoes ---------------------------------------------
-var aula3 = ```
-+
--
-*
-/
-++
---
-+=
--=
-*=
-/=
+var aula3 = ``` +,  -,  *,  /,  ++,  --,  +=,  -=,  *=,  /= ```
+
+// -- AULA 1.04: Operadoes de Igualdade e relacionais ------------------
+var aula4 = ```
+== , != 
+1 == '1' -> true
+1 === '1' -> false 
+Javascript é uma linguagem de tipagem fraca e dinâmica
 ```
-// -- AULA 1.03: Operadoes ---------------------------------------------
+
+// -- AULA 1.05: Operadoes de Igualdade e relacionais ------------------
