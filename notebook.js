@@ -26,4 +26,8 @@ Sintaxe e semântica de como criar uma função (argumentos, return, e outra coi
 Um pouquinho sobre escopo de variável
 ```
 
-// -- AULA 1.05: Operadoes de Igualdade e relacionais ------------------
+// -- AULA 1.06: desafio da semans ------------------------------------
+
+var aula6 = ```
+
+```
