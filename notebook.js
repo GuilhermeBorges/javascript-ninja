@@ -81,6 +81,11 @@
     var aula7 = ```
     ou e and
     ```
-/// -- AULA 2.02: Operadores unários
+/// -- AULA 2.02: Operadores unários -----------------
     var aula8 = ``` 
+    +'3' -> converte em string
+    ='kjalj' -> NaN
+    '3' + 3 -> '33'
+    3 + '3' -> '33'
     ```
+/// -- AULA 2.02: Operadores unários -----------------
