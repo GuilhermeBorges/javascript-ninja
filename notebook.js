@@ -1,38 +1,39 @@
+var aula = {}
+
 // =========================================================================
 // ==========================   AULA 01   ==================================
 // =========================================================================
-// -- AULA 1.02: Variáveis e tipos de dados ----------------------------
-    var aula2 = ```
-    - NUll é nenhum valor
+// -- AULA 1.02: Variáveis e tipos de dados ---------------------------- 
+    var aula2 = `- NUll e nenhum valor
     - UNDEFINERD é a ausência de valor
         - Mais usado quando a variável não existe
     - Javascript na verdade não existe arrays, são tudo objeto
-    ```
+    `
 
 
 // -- AULA 1.03: Operadoes ---------------------------------------------
-    var aula3 = ``` +,  -,  *,  /,  ++,  --,  +=,  -=,  *=,  /= ```
+    var aula3 = ` +,  -,  *,  /,  ++,  --,  +=,  -=,  *=,  /= `
 
 // -- AULA 1.04: Operadoes de Igualdade e relacionais ------------------
-    var aula4 = ```
+    var aula4 = `
     == , != 
     1 == '1' -> true
     1 === '1' -> false 
     Javascript é uma linguagem de tipagem fraca e dinâmica
     <, >, <=, >=
-    ```
+    `
 
 // -- AULA 1.05: Funções -----------------------------------------------
-    var aula5 = ```
+    var aula5 = `
     Sintaxe e semântica de como criar uma função (argumentos, return, e outra coisas )
     Um pouquinho sobre escopo de variável
-    ```
+    `
 
 // -- AULA 1.06: desafio da semans -------------------------------------
 
-    var aula6 = ```
+    var aula6 = `
     DESAFIO
-    ```
+    `
 
     // # Desafio Semana #1
     // Declarar uma variável chamada `myvar`, sem valor.
@@ -83,38 +84,60 @@
 // =========================================================================
 // -- AULA 2.01 Operadores lógicos -------------------------------------
 
-    var aula7 = ```
-    ou e and
-    ```
+    var aula7 = ``
 // -- AULA 2.02: Operadores unários ------------------------------------
-    var aula8 = ``` 
-    +'3' -> converte em string
-    ='kjalj' -> NaN
-    '3' + 3 -> '33'
-    3 + '3' -> '33'
-    ```
+    var aula8 = ``
 // -- AULA 2.03: Estrutura Léxica --------------------------------------
-    var aula9 = ```
-     - Diz qual é o nível mais baixo da linguagem, como criamos comentários, como separamos uma linguagem de outra e etc
-     - JS é Case Sensitive
-     - Comentários de linha e de bloco
-     - Literais são valores que não mudam, que fazem parte do crore
-        - 12 (números, strings, false, true, array, [1,2], {av:1}, etc)
-     - Identificadores
-        - Aquilo que podemos usar para criar variáveis: podemos começar com _, -, $, a-z, A-Z, 0-9
-        - Pode considerar qualquer caractere unicode
-            - þ = 1
-            - π = 3.14
-            - Funciona mas não usa carai! uesheae Vai atraplhar os amiguinhos
-     - 
-    ```
+    var aula9 = ``
 
 // -- AULA 2.05: Instrução condicional IF ------------------------------
-    var aula10 = ```
-    - Só ensinando como funciona o IF mesmo
-    ```
+    var aula10 = `So ensinando como funciona o IF mesmo`
 // -- AULA 2.06: DESAFIO SEMANA 02 -------------------------------------
+
+    var desafio02 = `Aqui ele explica como é feito as funções do GIT para fazer as coisas`
 // =========================================================================
 // ==========================   AULA 03   ==================================
 // =========================================================================
-// -- AULA 2.06: Estrutura Léxica --------------------------------------
+// -- AULA 3.01: Estrutura Léxica --------------------------------------
+var aula11 = 
+`
+Tipos primitivos
+    - number
+    - string
+    - boolean
+    - null e undefined 
+Tipos de objeto
+
+Conjunto de propriedades  ()
+{propriedade:'valor'}
+Apenas mostrou como criar objetos e acessas suas propriedades 
+
+- Funções são onjetos de primeira classe no javascript
+`
+var myvar = function() {return 'variável myvar'}
+
+// -- AULA 3.02: Métodos de objetos --------------------------------------
+
+var aula12 = ` 
+    Objeto pode ter propriedas cada propriedade tem um valor e este valor pode ser um objeto
+`
+var pessoa = {
+    nome: "Fernando",
+    idade: 30,
+    altura: 1.85,
+    peso: 85
+}
+
+pessoa = {sexo:'masculino'}
+"Aqui eu perdi tudo do objeto"
+var pessoa = {
+    nome: "Fernando",
+    idade: 30,
+    altura: 1.85,
+    peso: 85,
+    sexo: 'masculino'
+}
+
+pessoa.cor = 'caucasiano' //Assim nós não perdemos 
+pessoa.andar = () => {console.log('Pessoa andando')}
+//pessoa. 
