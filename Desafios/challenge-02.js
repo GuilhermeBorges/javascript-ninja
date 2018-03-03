@@ -18,7 +18,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function somaImprime () {
-    x += 2;
+    x = 2;
     console.log("O valor da variável agora é "+x)
 }
 
