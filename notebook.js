@@ -326,7 +326,7 @@ var aula23 = `
 
 
     for (var num = 0, arroz = 3; num < 10, arroz < 10; num++ , arroz +=3)
-    console.log(Num: ${ num } Arroz: ${ arroz })
+    console.log(Num:  num Arroz:  arroz)
 
     Num: 0 Arroz:3
     Num: 1 Arroz:6
@@ -334,12 +334,115 @@ var aula23 = `
     `
 
 var num = 0
-while (num < 20) console.log(num++)
+//while (num < 20) console.log(num++)
 
-for( var num = 0, arroz=3; num < 10, arroz<10; num ++, arroz+3) console.log(`Num: ${num} Arroz:${arroz}`)
+//for( var num = 0, arroz=3; num < 10, arroz<10; num ++, arroz+3) console.log(`Num: ${num} Arroz:${arroz}`)
 
 
 aulas[7][4] = aula23
 importantes.push(aula23)
 
 // --AULA 7.05: desafio--------------------------------------
+
+// =========================================================================
+// ==========================   AULA 08   ==================================
+// =========================================================================
+aulas[8] = {}
+// -- AULA 8.01: Operador modular --------------------------------------
+var aula24 = `nomear funções
+    - funções como tudo no js é um objeto e contém propriedades
+        - ex.: name ->
+            var func = function () {return 'hi';}
+            func.name // ''
+        - invocação é usando o parenteses, se eu não invocar a função 
+        - Ao atribuir função a uma variável parece, que na versão do JS dele, que este valor era perdido.
+            - Usando o quolla aqui não consegui encontrar problema, imprimiu o nome da func 
+        var func = function () { return 'hi'; }
+        var func2 = function minhaFuncao() { return 'hi'; }
+        console.log(func())
+        console.log(func.name) //func
+        console.log(func2.name) //minhaFuncao
+            - a variável apenas recebe a função mas o nome dela é a que é definida
+        - função sem nome é uma função anonima
+`
+var func = function () { return 'hi'; }
+var func2 = function minhaFuncao () { return 'hi'; }
+console.log(func())
+console.log(func.name)
+console.log(func2.name)
+
+aulas[8][1] = aula24
+importantes.push(aula24)
+// -- AULA 8.02: introdução à programação funcional --------------------------------------
+var aula25 = `
+    Programação funcional em JS
+        - formato como escrevemos as cosias é baseado em funções 
+        - Para escrever em funcional a linguagem tem que fornecer algumas coisas para nós
+        - funções são objetos de primeira classe (ou cidadãos de primeira classe) 
+            - significa que as funções tem o mesmo tratamento dos objetos no js
+            - Tudo o que conseguimos fazer com objeto em JS conseguimos fazer com funções
+    
+    Alguns padrões que precisamos aprender para pegar o jeitin
+        - Como você usa objetos literais você pode criar funções literais
+            var car = { brand: 'chevrolet', model: 'silverado'}; //objeto literal, da forma como ele é apresentado para nós
+            function sum(x,y) {return x+y} -> funções literais, são da forma como são apresentadas para nõs
+        - Como você atribui objetos à variaveis você também pode atribuir funções
+            var obj = {}
+            var func = function x () {}
+        - Da mesma forma uqe você retorna objetos em uma função podemos retornar uma função
+            - function person() {return {name:'fernando'}}
+            - person().name // fernando
+
+
+
+`
+var car = { brand: 'chevrolet', model: 'silverado' }
+aulas[8][2] = aula25
+importantes.push(aula25)
+
+// -- AULA 8.04: PF parte 3 --------------------------------------
+var aula26 = `
+    - Da mesma forma uqe você retorna objetos em uma função podemos retornar uma função
+        - function person() {return {name:'fernando'}}
+        - person().name // fernando
+        - function adder(x) {return function addOther (y) {return x+y}}
+        function adder(x) { 
+            return function addOther(y) { return x + y } 
+        }
+        var add2 = adder(2)
+
+        console.log(add2.name) //addOther
+        console.log(add2(3)) //5
+        console.log(adder(5)(3)) //8
+
+        - apenas linguagens que te dão o poder de usar funções como objetos de primeira classe
+`
+
+function adder(x) { 
+    return function addOther(y) { return x + y } 
+}
+var add2 = adder(2)
+
+console.log(add2.name)
+console.log(add2(3))
+console.log(adder(8)(3))
+
+aulas[8][3] = aula26
+importantes.push(aula26)
+
+// -- AULA 8.03: PF parte 3 --------------------------------------
+var aula27 = `
+    - Conseguimos atribuir funções a variáveis, retornar e agora vamos ver que da para passar funções como parâmetros
+
+`
+
+var mycar = { nome: 'xonathan', color: 'vermeio' }
+function getCarColor(car) { return car.color }
+
+console.log(getCarColor(mycar))
+
+function showOtherFunction(func) { return func() }
+console.log(showOtherFunction(() => 'Function JS NINJA'))
+aulas[8][4] = aula27
+importantes.push(aula27)
+// -- AULA 8.05: DESAFIO --------------------------------------
