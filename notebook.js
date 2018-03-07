@@ -1,5 +1,40 @@
 const aulas = {}
 const importantes = []
+
+aulas[1] = {}
+aulas[2] = {}
+aulas[3] = {}
+aulas[4] = {}
+aulas[5] = {}
+aulas[6] = {}
+aulas[7] = {}
+aulas[8] = {}
+aulas[9] = {}
+aulas[10] = {}
+// aulas[11] = {}
+// aulas[12] = {}
+// aulas[13] = {}
+// aulas[14] = {}
+// aulas[15] = {}
+// aulas[16] = {}
+// aulas[17] = {}
+// aulas[18] = {}
+// aulas[19] = {}
+// aulas[20] = {}
+// aulas[21] = {}
+// aulas[22] = {}
+// aulas[23] = {}
+// aulas[24] = {}
+// aulas[25] = {}
+// aulas[26] = {}
+// aulas[27] = {}
+// aulas[28] = {}
+// aulas[29] = {}
+// aulas[30] = {}
+// aulas[31] = {}
+// aulas[32] = {}
+// aulas[33] = {}
+// aulas[34] = {}
 // =========================================================================
 // ==========================   AULA 01   ==================================
 // =========================================================================
@@ -446,3 +481,155 @@ console.log(showOtherFunction(() => 'Function JS NINJA'))
 aulas[8][4] = aula27
 importantes.push(aula27)
 // -- AULA 8.05: DESAFIO --------------------------------------
+
+// =========================================================================
+// ==========================   AULA 09   ==================================
+// =========================================================================
+aulas[9] = {}
+// -- AULA 9.01: Funções dentro de funções (escopos) --------------------------------------
+var aula28 = `
+    Sabemos que conseguimos colocar uma função dentro de uma função mas como fica  o escopo dessa função
+    function myFunc() {
+        var n1 = 1
+        function sum() {return n1+2}
+        return sum();
+    }
+    console.log(myFunc()) // 3
+    // console.log(sum()) //Não funciona, sum não foi definida
+    // console.log(n1) //Não funciona, n1 não foi definida
+
+    A sum é uma closure
+    Será que o posicionamento muda alguma coisa ?
+
+       function myFunc() {
+        function sum() {return n1+2}
+        var n1 = 1
+        return sum();
+    }
+
+    funciona ainda, e agora ?
+        function myFunc() {
+            var n1 = 1
+            return sum();
+            function sum() {return n1+2}
+        }
+    funciona por causa do hoisting!
+    Maqueporraèessa
+    Hoisting só no próximo vídeo
+
+    `
+function myFunc() {
+    function sum() {return 1+2}
+    return sum();
+}
+console.log(myFunc())
+function myFunc() {
+    var n1 = 1
+    return sum();
+    function sum() { return n1 + 1 }
+}
+console.log(myFunc())
+// console.log(sum()) //Não funciona, sum não foi definida
+aulas[9][1] = aula28
+// importantes.push(aula28)
+
+// -- AULA 9.02: Hoisting --------------------------------------
+var aula29 = `
+    Hoisting -> içamento ou elevação
+    - Quando a gente declara uma variável depois o JS vai definir ela em cima e atribuir undefined e depois lá em baixo ele vai atribuir um valor a ela
+        - Por isso ele fala que é undefined e não que a variável não existe (não definida)
+    - Quanto temos uma função literal em JS o mesmo sobe a função para ela valer para todo o escopo
+        - Por isso funções literais estão disponiveis em todo o escopo em que estão inseridas mas as que não são (são variáveis que recebem função) não vão funcionar caso estejam depois de um return pelo jeito como o JS trabalha com variáveis
+    - Para evitar problemas com hoisting basta declarar todas as variáveis no início da função
+-------------
+FUNCIONA
+-------------
+function myFunc() {
+    var n1 = 1
+    return sum();
+    function sum() { return n1 + 1 }
+}
+console.log(myFunc())
+
+----------
+//Não FUNCIONA@
+----------
+function myFunc() {
+    var n1 = 1
+    return sum();
+    var sum = function() { return n1 + 1 }
+}
+O que o JS vai fazer é subir a variável com valor undefined mas ela só vai receber um valor quando for executada:
+
+function myFunc() {
+    var n1 = 1
+    var sum = undefined
+    return sum();
+    var sum = function() { return n1 + 1 }
+}
+`
+function myFunc() {
+    var n1 = 1
+    return sum();
+    function sum() { return n1 + 1 }
+}
+console.log(myFunc())
+
+//JS não faz o hoisting
+// function myFunc() {
+//     var n1 = 1
+//     return sum();
+//     var sum = function() { return n1 + 1 }
+// }
+// console.log(myFunc())
+//PQ ISSO FUNCIONA (Qquestion)
+aulas[9][2] = aula29
+importantes.push(aula29)
+
+// -- AULA 9.03: IIFE --------------------------------------
+var aula30 = `
+    IFE => IMMEDIATLY FUNCTION EXECUTION
+    função auto executável
+    - não existe uma forma de executar uma função anonima que não tem um nome e nãpo foi atribuida a nenhuma variável:
+        function() {return 1+9} //Não conseguimos executar ela 
+        Se eu colocar ela em parênteses ela é uma expressão
+            (function(){console.log('hahaha')})
+            E agora eu posso chamar essa expressão
+            (function(){console.log('hahaha')})() // hahaha
+            ((function(){console.log('hahaha')})()) // hahaha
+    - Lembre-se de colcoar o ';' antes pq se não ele vai entender que é a continuação da expressão anterior
+    - Qual é a vantagem
+        - quando eu executo uma IFE eu não preciso ter um escopo global
+        - ter um escopo global é uma merda por N motivos pois compartilha informação com todo o projeto e podemos perder o controle de variáveis e funções em escopos globais
+/`
+function sum() {return 1+2}
+var sum2 = function() {return 2+3}
+var sum3 = function otherSum() {return 2+3}
+console.log(sum())
+console.log(sum2())
+console.log(sum3());
+// console.log((function () { return 1 + 9 })())
+(function () {
+    console.log('hahaha')
+})()
+// function(){ console.log('hahaha')}()
+// console.log(otherSum()) //otherSum is not defined
+
+aulas[9][3] = aula30
+importantes.push(aula30)
+
+// -- AULA 9.04: DESAFIO --------------------------------------
+
+
+
+// =========================================================================
+// ==========================   AULA 10   ==================================
+// =========================================================================
+
+
+
+// -- AULA 10.01: DESAFIO --------------------------------------
+var aula31 = `
+`
+aulas[10][1] = aula31
+// importantes.push(aula31)
