@@ -85,7 +85,7 @@ function calculator(operacao) {
             case '*': valor = a * b; break;
             case '/': valor = a / b; break;
             case '%': valor = a % b; break;
-            default: valor = 'Operador inválido'
+            default: return 'Operador inválido'
         }
         return `Resultado da operação: ${a} ${operacao} ${b} = ${valor}`
     }
