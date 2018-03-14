@@ -2,7 +2,7 @@
 Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
 indentação correta do código, para ficar dentro da IIFE.
 */
-(function() {
+(function () {
   /*
   Analise as funções abaixo (`myFunction`, `myFunction2` e `myFunction3`, e
   ajuste o posicionamento das variáveis e funções internas, para que os códigos
@@ -17,14 +17,14 @@ indentação correta do código, para ficar dentro da IIFE.
   //   var number2 = 20;
   // }
   // myFunction();
-  function myFunction() {
-    var number1 = 10;
-    var number2 = 20;
-    console.log('Na função `myFunction`, o primeiro número é', number1);
-    console.log('Na função `myFunction`, o segundo número é', number2);
-    return number1 + number2;
+  function myFunction () {
+    var number1 = 10
+    var number2 = 20
+    console.log('Na função `myFunction`, o primeiro número é', number1)
+    console.log('Na função `myFunction`, o segundo número é', number2)
+    return number1 + number2
   }
-  myFunction();
+  myFunction()
 
   /*
       myFunction2();
@@ -39,16 +39,16 @@ indentação correta do código, para ficar dentro da IIFE.
   //   return sum();
   // }
   // myFunction2();
-  function myFunction2() {
-    var number1 = 10;
-    var number2 = 20;
-    var sum = function sum() {
-      return number1 + number2;
+  function myFunction2 () {
+    var number1 = 10
+    var number2 = 20
+    var sum = function sum () {
+      return number1 + number2
     };
-    console.log('A soma de 10 e 20 é igual a', sum ? sum() : undefined);
-    return sum();
+    console.log('A soma de 10 e 20 é igual a', sum ? sum() : undefined)
+    return sum()
   }
-  myFunction2();
+  myFunction2()
 
   /*
       myFunction3();
@@ -64,17 +64,17 @@ indentação correta do código, para ficar dentro da IIFE.
   //   };
   // }
   // myFunction3();
-  function myFunction3() {
-    var number2 = 50;
-    var number1 = 40;
-    console.log('A soma de 40 e 50 é igual a', sum());
-    console.log('Na função myFunction3, number1 é igual a', number1);
-    return sum();
-    function sum() {
-      return number1 + number2;
-    };
+  function myFunction3 () {
+    var number2 = 50
+    var number1 = 40
+    console.log('A soma de 40 e 50 é igual a', sum())
+    console.log('Na função myFunction3, number1 é igual a', number1)
+    return sum()
+    function sum () {
+      return number1 + number2
+    }
   }
-  myFunction3();
+  myFunction3()
 
   /*
   No desafio anterior criamos uma calculadora, usando uma estrutura funcional.
@@ -100,13 +100,13 @@ indentação correta do código, para ficar dentro da IIFE.
   passando dois números por parâmetro.
   */
 
-  var x = calculator(1,2)
-  function sum (a,b) {return a+b}
-  function mult (a,b) {return a*b}
+  var x = calculator(1, 2)
+  function sum (a, b) { return a + b }
+  function mult (a, b) { return a * b }
   console.log(x(sum))
   console.log(x(mult))
 
-  var sum = calculator(1,2)
+  var sum = calculator(1, 2)
 
   /*
   Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
@@ -118,8 +118,7 @@ indentação correta do código, para ficar dentro da IIFE.
   anônima tem como seus argumentos.
   */
 
-  console.log(`O resultado da soma é: ${sum((a,b)=>a+b)}`);
-
+  console.log(`O resultado da soma é: ${sum((a, b) => a + b)}`)
 
   /*
   Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
@@ -127,10 +126,10 @@ indentação correta do código, para ficar dentro da IIFE.
   diferentes para cada chamada.
   */
 
-    var subtraction = calculator(1,2)
-    var multiplication = calculator(3,4)
-    var division = calculator(5,6)
-    var mod = calculator(7,8)
+  var subtraction = calculator(1, 2)
+  var multiplication = calculator(3, 4)
+  var division = calculator(5, 6)
+  var mod = calculator(7, 8)
   /*
   Mostre as variáveis acima no `console` (uma chamada de console por variável),
   criando a função de `callback` que faz o cálculo para subração, multiplicação,
@@ -138,11 +137,11 @@ indentação correta do código, para ficar dentro da IIFE.
   As suas respostas devem estar abaixo dos `console.log` referentes à cada
   chamada.
   */
-  console.log(`O resultado da subtração é: ${subtraction((a,b) => a-b )}`);
+  console.log(`O resultado da subtração é: ${subtraction((a, b) => a - b)}`)
 
-  console.log(`O resultado da multiplicação é: ${multiplication((a,b) => a*b )}`);
+  console.log(`O resultado da multiplicação é: ${multiplication((a, b) => a * b)}`)
 
-  console.log(`O resultado da divisão é: ${division((a,b) => a/b )}`);
+  console.log(`O resultado da divisão é: ${division((a, b) => a / b)}`)
 
-  console.log(`O resto da divisão é: ${mod((a,b) => a%b )}`);
-} ());
+  console.log(`O resto da divisão é: ${mod((a, b) => a % b)}`)
+}())
