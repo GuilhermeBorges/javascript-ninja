@@ -16,7 +16,7 @@
     lastname: 'Oliveira',
     age: 25
   }
-  console.log('Propriedades de "person":');
+  console.log('Propriedades de "person":')
 
   /*
   Mostre no console, em um array, todas as propriedades do objeto acima.
@@ -117,7 +117,7 @@
   */
   console.log(myName.reverse().join(''))
 
-  console.log('\nAgora em ordem alfabética:');]
+  console.log('\nAgora em ordem alfabética:')
   /*
   Mostre todos os itens do array acima, odenados alfabéticamente.
   */
