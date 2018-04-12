@@ -11,8 +11,8 @@ aulas[7] = {}
 aulas[8] = {}
 aulas[9] = {}
 aulas[10] = {}
-// aulas[11] = {}
-// aulas[12] = {}
+aulas[11] = {}
+aulas[12] = {}
 // aulas[13] = {}
 // aulas[14] = {}
 // aulas[15] = {}
@@ -310,16 +310,16 @@ var aula18 = `Separar algumas instruções e juntar em uma só
 
         Ele vai imprimir 2 além de cair no default
 `
-function myFunc() {
-    var x = 0;
-    return (x,x += 1, x);
+function myFunc () {
+  var x = 0
+  return (x,x += 1, x)
 }
 console.log(myFunc())
 
 var x = (x) => (x *= 2, x += 1, x)
 console.log(x(2))
 aulas[6] = {}
-aulas[6][1]=aula18
+aulas[6][1] = aula18
 importantes.push(aula18)
 // -- AULA 6.02: Estrutura de repetição (WHILE) --------------------------------------
 var aula19 = `Falando sobre while`
@@ -626,10 +626,306 @@ importantes.push(aula30)
 // ==========================   AULA 10   ==================================
 // =========================================================================
 
-
-
-// -- AULA 10.01: DESAFIO --------------------------------------
+// -- AULA 10.01: WRAPPER OBJECTS --------------------------------------
 var aula31 = `
+    Valores primitivos não são objetos
+    - Se lee tem propriedades  e métodos ele é um objeto caso contrário ele é um valor primitivo
+    var name = 'Daciuk'
+    name.length
+    Se valors primitivos não são objetos como conseguimos usar propriedades como este length
+        -> É aí que entra os wrappers
+        -> Contrutores: Criam novos objetos 
+            var name = new String('Guilherme')
+            var age = new Number(25)
+            var ninja = new Boolean(false)
+        -> Por debaixo dos panos é isso o que o JS faz
+        -> Sempre serão um objeto (valor real é o .valueOf)
+            name.valueOf()
+        -> Se usarmos sem o NEW eles servem mais de conversores do que construtores
+            - var name = String(30)
+            - var age = Number('150')
+            - var ninja = Boolean(0)
 `
 aulas[10][1] = aula31
 // importantes.push(aula31)
+
+// -- AULA 10.02: COMO TESTAR TIPOS DE VALORES --------------------------------------
+var aula32 = `
+    COMO TESTAR TIPOS DE VALORES
+    typeof <operand>
+
+
+    typeof undefined // 'undefined'
+    typeof function () {} // 'function'
+    typeof true // 'boolean'
+    typeof 10 // 'Number'
+    typeof 'JS ninja' // 'string'
+    typeof {} // 'object'
+    typeof [] // 'object'
+    typeof null // 'object'
+`
+console.log(typeof undefined) // 'undefined'
+console.log(typeof function () { }) // 'function'
+console.log(typeof true) // 'boolean'
+console.log(typeof 10) // 'number'
+console.log(typeof 'JS ninja') // 'string'
+console.log(typeof {}) // 'object'
+console.log(typeof []) // 'object'
+console.log(typeof null) // 'object'
+
+console.log('JS' + 2)
+console.log('2' + 2)
+console.log(2 + '2')
+console.log(2 + ['w'])
+
+aulas[10][2] = aula32
+// importantes.push(aula32)
+
+
+
+// =========================================================================
+// ==========================   AULA 11   ==================================
+// =========================================================================
+
+// -- AULA 11.01: LAÇOS LOOPS DO WHILE --------------------------------------
+let aula33 = `Do while e FOR IN
+do {... } while(x < 10)
+
+for in
+var car = {
+  brand: 'W',
+  model: 'Gol',
+  year: 2014
+}
+
+for (x in car) {
+  console.log(x) // brand, model, year
+}
+for (x in [1, 2, 3, 45]) {
+  console.log(x) // 0, 1, 2, 3
+}
+
+O for in também pode ser usado para verificar se um objeto tem um elemento
+
+console.log('brand' in car) //true
+console.log('wheels' in car) //false
+`
+car = {
+  brand: 'W',
+  model: 'Gol',
+  year: 2014
+}
+
+for (x in car) {
+  console.log(x)
+}
+for (x in [1, 2, 3, 45]) {
+  console.log(x)
+}
+console.log('brand' in car)
+console.log('wheels' in car)
+aulas[11][1] = aula33
+importantes.push(aula33)
+
+// -- AULA 11.02: SALTOS --------------------------------------
+let aula34 = `
+  - return é considerado um salto que só pode ser executado dentro de funções
+    pula o resto das coisas da função
+  - break 
+    - dentro do switch case
+    - dentro de um loop
+  - continue
+    - quasde a mesma coisa do que o break só que não cancela o loop e sim deixa de executar o que está para baixo e continua para a próxima iteração do loop
+`
+aulas[11][2] = aula34
+// importantes.push(aula34)
+
+
+
+
+// =========================================================================
+// ==========================   AULA 12 OBJETOS  ==================================
+// =========================================================================
+
+// -- AULA 12.01: OBJETOS --------------------------------------
+let aula35 = `
+Objetos são:
+  - Mutáveis
+    - Posso adicionar algo, deletar, alterar uma propriedade
+  - Manipulados por referência
+    - Mesmo que dois objetos sejam identicos se eu usar o comparador eles não vão ser iguais
+      - Isso se deve por eles serem manipulados na memória
+      - var objCopy = obj
+      - Se eu mudar a prop1 do objCopy ela também será alterada no obj
+  - Criando Objetos:
+    - Literais
+    - Como constructor (new)
+      var newObj = new Object() // Mesma coisa que um literal (mas com literal é sempre mais rápido)
+    - com Object.create()
+      var obj = Object.create() // retorna um erro
+  - Prototipo
+    - Objeto tem uma propriedade chamada protótipo (Object.prototype)
+    - herda do protótipo do próprio objeto
+      - Object.prototype
+    - Todo objeto herda de Object.prototype menos o próprio Object.prototype
+`
+
+var obj1 = {prop1: 'prop1', prop2: 'prop2'}
+var obj2 = {prop1: 'prop1', prop2: 'prop2'}
+
+console.log(obj1)
+obj1.prop1 = 'propriedade'
+console.log(obj1)
+delete obj1.prop1
+console.log(obj1)
+var objCopy = obj1
+console.log(obj1)
+console.log(objCopy)
+objCopy.a = 'ola'
+console.log(obj1)
+console.log(objCopy)
+
+
+aulas[12][1] = aula35
+
+// -- AULA 12.02: Criando objetos --------------------------------------
+let aula36 = `
+  OBJECT.CREATE
+    - Ao usar o Object.create(obj) ele irá copiar todo o objeto para o novo, porém caso mudamos alguma propriedade no pai ele também é mudado.
+        - Se mudarmos alguma coisa nele não é alterado no pai
+        - Se alterarmos alguma propriedade dentro filho que seja igual ao do pai este vinculo é perdido (ex.: mudamos o valor de uma prop no filho para um valor = X, mudamos no pai para um valor = Y, como o filho já foi modificado ele agora não é mais influenciado)
+
+            var objA = {x: 1, y: 2}
+            var objB = Object.create(objA)
+            console.log(objA) // {x:1, y:2}
+            console.log(objB) // {}
+            console.log(objB.prototype) undefined
+            console.log(objB.x) 1
+            console.log(objB.y) 2
+
+            objA.x = 7
+            console.log(objA) // {x:7, y:2}
+            console.log(objB) // {}
+            console.log(objB.x) // 7
+            console.log('x' in objB) true
+
+            objB.x = 10
+            console.log(objA) {x:7, y:2}
+            console.log(objB) {x: 10}
+            console.log(objB.x) 10
+
+            objA.x = 12
+            console.log(objB.x) //10
+            console.log(objA.x) //12
+
+        - Isso acontece pq esta prop deixa de ser uma pro herdada para ser uma propriedade própria do objeto filho
+            console.log(objB.hasOwnProperty('x')) //false -> vem do pai
+            objB.x = 10
+            console.log(objB.hasOwnProperty('x')) //true -> agora é dele
+    - Os valores são literalmente herdados. Se um filho muda o valor não é mudado no pai, porém, caso um pai mude um valor o mesmo é espelhado no filho
+    - As propriedades herdadas não são mostradas no console.log mas da para ver quais são as herdades e quais não são
+        - Mostrar apenas o que é dele: obj.hasOwnProperty('p') -> Retorna true se a propriedade p for do filho e não herdada
+        - Da para usar ela dentro de um foreach para filtar e mostrar apenas as propriedades próprias do objeto
+        
+`
+var objA = {x: 1, y: 2}
+var objB = Object.create(objA)
+console.log(objA)
+console.log(objB)
+console.log(objA === objB)
+console.log(objB.prototype)
+console.log(objB.x)
+console.log(objB.y)
+
+objA.x = 7
+console.log(objA)
+console.log(objB)
+console.log(objB.x)
+console.log('x' in objB)
+console.log(objB.hasOwnProperty('x'))
+objB.x = 10
+console.log(objB.hasOwnProperty('x'))
+console.log(objA)
+console.log(objB)
+console.log(objB.x)
+objA.x = 12
+console.log(objB.x)
+console.log(objA.x)
+
+aulas[12][2] = aula36
+importantes.push(aula36)
+
+// -- AULA 12.03: Object.keys --------------------------------------X
+
+let aula37 = `
+    => Operações com objetos
+        - Object.keys(obj): retorna um array com todas as propriedades deste objeto
+            - Apenas as propriedades qeu são próprias daquele objeto
+        - objB.isPrototypeOf(objA) retorna true ou false caso o objeto B seja um objeto que herdou de A
+        - JSON.stringify(obj): transforma meu objeto em uma string (como se fosse um JSON)
+        - JSON.parse(string): transforma uma string que representa um objeto (em json) em um objeto mesmo
+    
+    => Drogas com array
+        
+        let arr = []
+        arr[0] = 5
+        arr[1] = 10
+        arr[12] = 'tretas'
+        console.log(arr) // [5, 10, , , , , , , , , , , , 'tretas']
+    
+    - array.push(item) => adiciona um item no array e retorna o tamanho do array após a inserção
+    - array.pop() => remove o item do final e retorna ele
+
+`
+console.log(Object.keys(objB))
+console.log(Object.keys(Object.create(objA)))
+x = { 'a': (a, b) => a + b, 'b': 3 }
+console.log(JSON.stringify(x))
+aulas[12][3] = aula37
+
+let arr = []
+arr[0] = 5
+arr[1] = 10
+arr[12] = 'tretas'
+console.log(arr)
+importantes.push(aula37)
+
+// -- AULA 12.04: ARRAYS MÉTODOS --------------------------------------X
+
+let aula38 = `
+  => Métodos com array
+    -> arr.join(): Retorna uma string que é contatenação de cada elemento de um array separado por vírgula
+      -> arr.join(', '): vai usar a virgula e espaço entre os elementos do array
+    -> arr.reverse(): reverte os itens do array (modifica o array)
+    -> arr.sort() : ordena o array (modifica o array principal)
+
+`
+
+aulas[12][4] = aula38
+importantes.push(aula38)
+
+
+
+// =========================================================================
+// ==========================   AULA 13 OBJETOS  ==================================
+// =========================================================================
+
+// -- AULA 13.01: ARRAYS TO STRING, CONCAT, UNSHIFT e SHIFT --------------------------------------
+let aula39 = `ARRAYS TO STRING, CONCAT, UNSHIFT e SHIFT
+`
+aulas[13][1] = aula39
+
+// -- AULA 13.02: SLICE e SPLICE --------------------------------------
+let aula40 = ` SLICE e SPLICE
+`
+aulas[13][2] = aula40
+
+// -- AULA 13.03: FOREACH EVERY SOME --------------------------------------
+let aula41 = `FOREACH EVERY SOME
+`
+aulas[13][3] = aula41
+
+// -- AULA 13.04: MAP FILTER --------------------------------------
+let aula42 = ` MAP FILTER
+`
+aulas[13][4] = aula42
