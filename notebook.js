@@ -13,7 +13,7 @@ aulas[9] = {}
 aulas[10] = {}
 aulas[11] = {}
 aulas[12] = {}
-// aulas[13] = {}
+aulas[13] = {}
 // aulas[14] = {}
 // aulas[15] = {}
 // aulas[16] = {}
@@ -912,20 +912,105 @@ importantes.push(aula38)
 
 // -- AULA 13.01: ARRAYS TO STRING, CONCAT, UNSHIFT e SHIFT --------------------------------------
 let aula39 = `ARRAYS TO STRING, CONCAT, UNSHIFT e SHIFT
+Diferente do push o método concat ele nao faz alterações no array, ele devolve um novo
+    - PUSH: Adiciona um item no final
+    - CONCAT: adiciona os elementos do array passado como parametro no fim do array
+    - POP: remove o último elemento do array e retorna ele
+    - UNSHIFT: Adiciona um item no começo do array
+    - SHIFT: Remove o primeiro elemento do array (igual o pop só que para o primeiro item)
 `
+
+// A diferença do toString para o join é que no Join voc~e tem um parâmetro que deixa você escolher o separador
+console.log([1, 2, 3].toString())
+console.log(({ a: 1, b: 2, c: 3 }).toString())
+let a = [1, 2, 3]
+let arrayConcatenado = a.concat(4)
+let arrayConcatenado2 = a.concat([4, 5])
+console.log(a)
+console.log(arrayConcatenado)
+console.log(arrayConcatenado2)
+a.push([1, 2])
+console.log(a)
+a.unshift(0)
+console.log(a)
 aulas[13][1] = aula39
+importantes.push(aula39)
 
 // -- AULA 13.02: SLICE e SPLICE --------------------------------------
 let aula40 = ` SLICE e SPLICE
+    - SLICE: retornar um pedaço do array que selecionamos
+        1.p: indice onde queremos começar
+        2.p: onde queremos parar
+        - Retorna uma array novo, não altera o antigo
+        - Podemos uar números negativos
+    - SPLICE: Modifica o array principal e pode adicionar ou remover itens
+        1.p: onde queremos começar a inserir ou remover itens do array
+            - retorna o que foi removido
+            - O array original fica sem isso
+        2.p: quantos elementos queremos 
+        3.p: começa a adicionar itens a partir daquele indice (adiciona o parametro tres)
+        n.p: continua adicionando quanto mais parametros mais coisas adiciona
 `
+console.log(a)
+console.log(a.slice(1))
+console.log(a.slice(1, 4))
+console.log(a.slice(-2, -1))
+console.log(a)
+
+console.log(a.splice(3))
+console.log(a)
+a = a.concat([3, 4, 5])
+b = a
+console.log(a)
+console.log(a.splice(2,1))
+console.log(a)
+console.log(a.splice(2, 0, 2))
+console.log(a)
+console.log(a.splice(2, 1, 'a', 'b', 'c', 'd', 'e'))
+console.log(a)
+console.log(a.splice(2, 5, 2.5))
+console.log(a)
 aulas[13][2] = aula40
+
+importantes.push(aula40)
 
 // -- AULA 13.03: FOREACH EVERY SOME --------------------------------------
 let aula41 = `FOREACH EVERY SOME
+  - forEach: executa função passada para cada elemento do array sento o primeiro parâmetro o elemento atual, o segundo o index atual e o terceiro o array
+    - O array passado é passado pro referência, ou seja, caso dentro do foreach você mude o valor ele será alterado forevur
+  - every: recebe uma função booleana onde a mesma recebe como parametro o item, caso essa função retorne true para cada elemento do array ele retorna true, caso contrário false
+  - some: análogo ao every mas retorna true se pele menos um dos elementos retornar verdadeiro 
 `
+
+console.log(a)
+console.log(a.splice(2, 1))
+a.forEach(function (item, index, array) {
+  console.log(item, index, array)
+  array[index] = item * 2
+  console.log(array)
+})
+console.log(a)
+
+x = a.every(item => item > 3)
+console.log(x)
+console.log(a.some(item => item > 3))
 aulas[13][3] = aula41
 
 // -- AULA 13.04: MAP FILTER --------------------------------------
 let aula42 = ` MAP FILTER
+  - MAP: recebe uma função como parametro e retorna um novo array com esta função aplicada a cada um dos elementos do array
+  - FILTER: faz basicamente o que o map faz mas retorna um novo array onde a função passada sobre o item retorne true
 `
+a = [1, 2, 3, 4, 5]
+console.log(a.map(x => x * 3))
+console.log(a)
+console.log(a
+  .map(x => x * 3)
+  .filter(x => x % 2 === 0))
+console.log(a)
+console.log(a
+  .map(x => x * 3)
+  .filter(x => x % 2 === 0))
+console.log(a)
+
 aulas[13][4] = aula42
