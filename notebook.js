@@ -14,8 +14,8 @@ aulas[10] = {}
 aulas[11] = {}
 aulas[12] = {}
 aulas[13] = {}
-// aulas[14] = {}
-// aulas[15] = {}
+aulas[14] = {}
+aulas[15] = {}
 // aulas[16] = {}
 // aulas[17] = {}
 // aulas[18] = {}
@@ -1014,3 +1014,83 @@ console.log(a
 console.log(a)
 
 aulas[13][4] = aula42
+
+
+
+// =========================================================================
+// ==========================   AULA 14 ARRAYS  ==================================
+// =========================================================================
+
+// -- AULA 14.01: Reduce e REduce RIgght --------------------------------------
+let aula43 = `REDUCE e REDUCERIGHT
+    - REDUCE não modifica o array
+        - Valor acumulado
+        - Valor atual no array
+        - Index
+        - Array
+    - ReduceRight faz a mesma coia que o reduce só que de trás para frente
+`
+
+let arR = [1, 2, 3, 4, 5]
+let reduce = arR.reduce(function (acumulado, atual, index, array) {
+  return acumulado + atual
+}, 0)
+
+let nombrezinhu = ['G', 'u', 'i', 'l', 'h', 'e', 'r', 'm', 'e']
+let reduce2 = nombrezinhu.reduce(function (acumulado, atual, index, array) {
+  return acumulado + atual
+})
+console.log(reduce2)
+
+reduce2 = nombrezinhu.reduceRight(function (acumulado, atual, index, array) {
+  return acumulado + atual
+})
+console.log(reduce2)
+aulas[14][1] = aula43
+importantes.push(aula43)
+
+// -- AULA 14.02: INDEXOF LASTINDEX e ISARRAY --------------------------------------
+let aula44 = `INDEXOF LASTINDEX e ISARRAY
+  - indexOf()
+    - Dado um array do array retorna a posição que o elemento passado está no array ou -1 caso não exista
+      - p1: O que queremos procurar
+      - p2: A partir de que index queremos procurar (default = 0)
+  - lastIndexOf()
+    - Faz exatamente o que o indexOf faz só que começa no final
+  - isArray()
+    - Retorna true se é um array
+    - ah mas qual é o uso disso (int)
+      - O typeof[] => retorna Object
+      - Ele usa apenas para valores primitivos
+      - Ele usa apenas para valores primitivos
+
+      `
+
+console.log(nombrezinhu.indexOf('e'))
+console.log(nombrezinhu.indexOf('a'))
+console.log(nombrezinhu.indexOf('e', 6))
+console.log(nombrezinhu.lastIndexOf('e'))
+console.log(nombrezinhu.lastIndexOf('a'))
+console.log(nombrezinhu.lastIndexOf('e', 6))
+console.log(Array.isArray([]))
+console.log(typeof [])
+
+aulas[14][2] = aula44
+importantes.push(aula44)
+
+// =========================================================================
+// ==========================   AULA 15 THIS  ==================================
+// =========================================================================
+
+// -- AULA 15.01: Reduce e REduce RIgght --------------------------------------
+let aula45 = `REDUCE e REDUCERIGHT
+`
+aulas[15][1] = aula45
+importantes.push(aula45)
+
+// -- AULA 15.02: Reduce e REduce RIgght --------------------------------------
+let aula46 = `REDUCE e REDUCERIGHT
+`
+aulas[15][2] = aula46
+importantes.push(aula46)
+
