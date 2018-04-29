@@ -22,13 +22,13 @@
   Crie uma variável chamada `brasil`, que irá receber as duas regiões
   concatenadas. Mostre o `brasil` no console.
   */
-  console.log('\nAlguns Estados do Brasil:');
+  console.log('\nAlguns Estados do Brasil:')
   let brasil = sul.concat(sudeste)
   console.log(brasil)
   /*
   Adicione 3 novos estados da região Norte no início do array e mostre no console.
   */
-  console.log('\nMais estados adicionados:');
+  console.log('\nMais estados adicionados:')
   // brasil.unshift('Acre')
   // brasil.unshift('Amazonas')
   // brasil.unshift('Rondônia')
@@ -48,13 +48,13 @@
   /*
   Mostre no console os estados que estão em `newSul`.
   */
-  console.log('\nEstados do Sul do Brasil:');
+  console.log('\nEstados do Sul do Brasil:')
   console.log(newSul)
 
   /*
   Mostre no console todos os estados que estão em `brasil`.
   */
-  console.log('\nAlguns Estados do Brasil:');
+  console.log('\nAlguns Estados do Brasil:')
   console.log(brasil)
   /*
   Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
@@ -64,7 +64,7 @@
   /*
   Mostre no console os estados do nordeste.
   */
-  console.log('\nEstados do Nordeste:');
+  console.log('\nEstados do Nordeste:')
   console.log(nordeste)
 
   /*
@@ -84,13 +84,13 @@
   /*
   Mostre no console os estados em `newSudeste`.
   */
-  console.log('\nEstados em newSudeste:');
+  console.log('\nEstados em newSudeste:')
   console.log(newSudeste)
 
   /*
   Mostre no console os estados do `brasil`.
   */
-  console.log('\nAlguns estados do Brasil:');
+  console.log('\nAlguns estados do Brasil:')
   console.log(brasil)
 
   /*
@@ -106,8 +106,8 @@
   /*
   Mostre o array `newBrasil` no console
   */
-  console.log('newBrasil:');
-  console.log(newBrasil);
+  console.log('newBrasil:')
+  console.log(newBrasil)
   // ?
 
   /*
@@ -117,7 +117,7 @@
   Senão, mostre no console:
   - "Nem todos os estados tem mais de 7 letras!"
   */
-  console.log('\nTodos os estados de `brasil` tem mais de 7 letras?');
+  console.log('\nTodos os estados de `brasil` tem mais de 7 letras?')
   // ?
   let temSeteLetras = (brasil.every(e => (e.length) > 7))
   let texto = temSeteLetras ? 'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras!'
@@ -130,7 +130,7 @@
   Senão, mostrar a frase:
   - "Ceará não foi incluído :("
   */
-  console.log('\nCeará está incluído em `brasil`?');
+  console.log('\nCeará está incluído em `brasil`?')
   let temCeara = brasil.some(e => e === 'Ceará')
   texto = temCeara ? 'Ceará está incluído!' : 'Ceará não foi incluído :('
   console.log(texto)
@@ -141,18 +141,18 @@
   - "[ESTADO] pertence ao Brasil."
   Atribua o novo array a uma variável chamada `map`.
   */
-  let map = newBrasil.map( e => {id: e.id + 1, estado: e.estado + ' pertence ao Brasil'})
+  let map = newBrasil.map(e => { return {id: e.id + 1, estado: e.estado + ' pertence ao Brasil'} })
   //   {
   //   e.id += 1
   //   e.estado += ' pertence ao Brasil'
   //   return e
   // }
-// )
+  // )
 
   /*
   Mostre no console o array criado acima:
   */
-  console.log('\nnewBrasil agora com mais informações:');
+  console.log('\nnewBrasil agora com mais informações:')
   // ?
   console.log(map)
 
@@ -164,7 +164,6 @@
   /*
   Mostre o array filtrado acima no console.
   */
-  console.log('\nEstados com ID par:');
+  console.log('\nEstados com ID par:')
   console.log(filter)
-
-})();
+})()
