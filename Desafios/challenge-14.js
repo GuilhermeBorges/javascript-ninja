@@ -11,14 +11,19 @@
   Mostre esse array no console.
   */
   console.log('Number Objects Array:')
-  // ?
-
+  let numberObjects = Array.from({length: 10}, (i, j) => { return {number: [j+1]} })
+  console.log(numberObjects)
   /*
   Crie um array chamado `justNumbers`, que terá como elementos somente os
   números do array criado acima. Mostre esse novo array no console.
   */
   console.log('\nJust Numbers:')
-  // ?
+  let justNumbers = numberObjects.reduce(function (combinado, atual) {
+    combinado.push(atual.number[0])
+    return combinado
+  }, [])
+
+  console.log(justNumbers)
 
   /*
   Crie um novo array chamado `justMod2Or3`, que receberá do array criado acima
