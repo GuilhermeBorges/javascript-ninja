@@ -1055,6 +1055,7 @@ let aula44 = `INDEXOF LASTINDEX e ISARRAY
     - Dado um array do array retorna a posição que o elemento passado está no array ou -1 caso não exista
       - p1: O que queremos procurar
       - p2: A partir de que index queremos procurar (default = 0)
+        - Se não passarmos o segundo parâmetro ele pega o primeiro elemento como o inicial e o segundo como o atual na primeira iteração
   - lastIndexOf()
     - Faz exatamente o que o indexOf faz só que começa no final
   - isArray()
