@@ -60,7 +60,7 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
   function fraseMotivacional (arrayCincoAmigos) {
     return arrayCincoAmigos.reduce((string, nome, index, array) => {
       string += (index === array.length - 1)
-        ? `e ${nome} são meus amigos.`
+        ? ` e ${nome} são meus amigos.`
         : `, ${nome}`
       return string
     })
