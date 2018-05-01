@@ -16,9 +16,11 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
   */
   console.log('As letras do seu nome:');
   let name = 'Guilherme'
-  name.split('').forEach((letra, index) => {
-    console.log(`${letra} é a ${index}ª letra do meu nome.`)
-  })
+  name
+    .split('')
+    .forEach((letra, index) => {
+      console.log(`${letra} é a ${index}ª letra do meu nome.`)
+    })
 
   /*
   - Declare uma variável chamada `fullName`, que receba seu nome completo,
@@ -33,14 +35,16 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
   console.log para cada formato.
   */
   console.log('\nNome convertido à partir de um slug:');
-  let fullNameSlug = 'guilherme-borges-oliveira'
-  let fullName = fullNameSlug
-    .split('-')
-    .map(e => e[0]
-      .toUpperCase()
-      .concat(e.substring(1)))
-    .join(' ')
-  console.log(fullName)
+  let fullName = 'guilherme-borges-oliveira'
+  function nameFromSlug (fullNameSlug) {
+    return fullNameSlug.split('-')
+      .map(e => e[0]
+        .toUpperCase()
+        .concat(e.substring(1)))
+      .join(' ')
+  }
+
+  console.log(nameFromSlug(fullName))
 
   /*
   - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -53,14 +57,16 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
   */
   console.log('\nMeus amigos:');
   let cincoAmigos = ['Gui', 'Bibi', 'Gigi', 'P', 'Lana']
-  let fraseMotivacional = cincoAmigos.reduce((string, nome, index, array) => {
-    string += (index === array.length - 1)
-      ? `e ${nome} são meus amigos.`
-      : `, ${nome}`
-    return string
-  })
+  function fraseMotivacional (arrayCincoAmigos) {
+    return arrayCincoAmigos.reduce((string, nome, index, array) => {
+      string += (index === array.length - 1)
+        ? `e ${nome} são meus amigos.`
+        : `, ${nome}`
+      return string
+    })
+  }
   console.log(cincoAmigos)
-  console.log(fraseMotivacional)
+  console.log(fraseMotivacional(cincoAmigos))
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
   Mostre o resultado no console.
@@ -86,8 +92,11 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
   */
   console.log('\nNome com letras intercaladas entre caixa alta e baixa:');
   let myName = 'guilherme'
-  console.log(myName
-    .split('')
-    .map((e, i) => (i % 2 === 0 ? e.toUpperCase() : e.toLowerCase()))
-    .join(''))
+  function nomeIntercalado (name) {
+    return name.split('')
+      .map((e, i) => (i % 2 === 0 ? e.toUpperCase() : e.toLowerCase()))
+      .join('')
+  }
+  console.log(nomeIntercalado(myName))
+    
 })()
