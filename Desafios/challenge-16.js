@@ -64,6 +64,7 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
         : `, ${nome}`
       return string
     })
+    // .concat(' são meus amigos')
   }
   console.log(cincoAmigos)
   console.log(fraseMotivacional(cincoAmigos))
