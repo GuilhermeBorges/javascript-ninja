@@ -74,10 +74,8 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log('\nNova idade das pessoas:');
-  guilherme.addAge(1)
-  syane.addAge(2)
-  lana.addAge(3)
-  console.log(`${guilherme.getFullName()} agora tem ${guilherme.getAge()} anos.`)
-  console.log(`${syane.getFullName()} agora tem ${syane.getAge()} anos.`)
-  console.log(`${lana.getFullName()} agora tem ${lana.getAge()} anos.`)
+  
+  console.log(`${guilherme.getFullName()} agora tem ${guilherme.addAge(1).getAge()} anos.`)
+  console.log(`${syane.getFullName()} agora tem ${syane.addAge(2).getAge()} anos.`)
+  console.log(`${lana.getFullName()} agora tem ${lana.addAge(3).getAge()} anos.`)
 })()
