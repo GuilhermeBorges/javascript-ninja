@@ -81,6 +81,7 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
   */
   console.log('\nParte de uma string:');
   console.log('Fernando'.substring(8, 3))
+  console.log('Fernando'.slice('Fernando'.lastIndexOf('nando')))
 
   /*
   Declare uma variável chamada `myName`, que receba o seu primeiro nome,
