@@ -98,5 +98,10 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
       .join('')
   }
   console.log(nomeIntercalado(myName))
+  console.log(nomeIntercalado('gustavo'))
+  console.log(nomeIntercalado(myName))
+  console.log(nomeIntercalado('Fernando'))
+  console.log(nomeIntercalado('RoBertO'))
+  console.log(nomeIntercalado('gabriEla'))
     
 })()
