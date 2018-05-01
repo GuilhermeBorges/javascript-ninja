@@ -1174,18 +1174,197 @@ aulas[16][1] = aula47
 // importantes.push(aula47)
 
 // =========================================================================
-// ==========================   AULA 15 THIS  ==================================
+// ====   AULA 16 CRIAÇÕES DEVARIÁVEIS SEM O VAR  ==========================
 // =========================================================================
 
-// -- AULA 16.01: Reduce e REduce RIgght --------------------------------------
-let aula48 = `REDUCE e REDUCERIGHT
-`
-aulas[16][1] = aula48
-// importantes.push(aula48)
+// -- AULA 16.01: RUSE STRICT --------------------------------------
+let aula48 = `USE STRICT
+  - É uma diretiva (apenas uma string mesmo)
+    - A partir da ECMA 5 tem isso (todas deste curso)
+    - JS tem alguns problemas quanto a declarações de variáveis globais e etc
+    - Mesmo colocando uma IIFE se declararmos uma variável dentro dela sem  var/let/const ela fica acessível no escopo global
+          ;(function () {
+            myVar = 'bananinha'
+          })()
+          console.log(myVar) --> Bananinha
+      - Ao usar o use strict impedimos isso de acontecer
+          ;(function () {
+            'use strict';
+            myVar = 'bananinha' --> dispara o um referenceerror: o disparo é feito aqui dentro não no console.log
+          })()
+          console.log(myVar) --> nada pq deu erro 
+      - É apenas uma string mesmo
+      - Colocamos o use strict dentro de uma IIFE que vamos usar pq isso pode quebrar código de terceiros que são colocados no código e aí teríamos que pedir para o pessoal 
+  - Javascript chama-se ECMA SCRIPT
 
-// -- AULA 16.02: Reduce e REduce RIgght --------------------------------------
-let aula49 = `REDUCE e REDUCERIGHT
 `
+
+;(function () {
+  let myVar = 'bananinha'
+})()
+aulas[16][1] = aula48
+importantes.push(aula48)
+
+// -- AULA 16.02: use strict e WITH --------------------------------------
+let aula49 = `use strict e WITH
+  - IFE serve para diminuir o tamanho de um objeto
+    - Basicamente ele fala que o objeto passado como parâmetro vai ser o novo escopo do que vem abaixo 
+    ;(function () {
+      var obj = {
+        prop1: {
+          prop2: {
+            prop3: {
+              prop31: 'prop31',
+              prop32: 'prop32',
+              prop33: 'prop33'
+            }
+          }
+        }
+      }
+      console.log(obj)
+      console.log(obj.prop1)
+      console.log(obj.prop1.prop2)
+      console.log(obj.prop1.prop2.prop3) // serve para diminuir esse cara aqui
+      with (obj.prop1.prop2.prop3) {
+        console.log(prop31, prop32, prop33) --> printa bunitin
+      }
+    })()
+  - O problema é que variaveis dentro do with podem ser confundidas com as que estao fora e por isso ele não é permitido quanso usamos o 'use strict'
+  - use script faz o this ser undefined ao invés de ficar pendurado à variável global
+`
+;(function () {
+  var obj = {
+    prop1: {
+      prop2: {
+        prop3: {
+          prop31: 'prop31',
+          prop32: 'prop32',
+          prop33: 'prop33'
+        }
+      }
+    }
+  }
+  console.log(obj)
+  console.log(obj.prop1)
+  console.log(obj.prop1.prop2)
+  console.log(obj.prop1.prop2.prop3) // serve para diminuir esse cara aqui
+  with (obj.prop1.prop2.prop3) {
+    console.log(prop31, prop32, prop33)
+  }
+})()
 aulas[16][2] = aula49
 // importantes.push(aula49)
+
+
+// -- AULA 16.03: Operador Delete, objeto e funções --------------------------------------
+let aula50 = `Operador Delete, objeto e funções
+  - Delete não conseguimos deletar variáveis
+    - porém, se estivermos no modo user strict, ao tentar deletar uma variável ele dispara um erro (deletar propriedades de objetos continua funcionando corretamente)
+  - para objetos as propriedades devem ter nomes diferentes, caso contrário ao usar o modo estrito ele dispara um erro (no modo normal não)
+    - O mesmo serve para atributos de funções e etc
+`
+  ; (function () {
+    let x = 2
+    let obj = {
+      prop1: 'prop1',
+      prop2: 'prop2',
+      prop3: 'prop3',
+      prop3: 'prop3'
+    }
+    console.log(obj.prop1)
+    console.log(delete obj.prop1)
+    console.log(obj.prop1)
+    console.log(delete x)
+    console.log(x)
+  })()
+aulas[16][3] = aula50
+// importantes.push(aula50)
+
+
+// -- AULA 16.04: Objeto String --------------------------------------
+let aula51 = `Objeto String
+  - String é um array like object também
+  - .length 
+    - faz a mesma cosia que o array, retorna a quantidade de caracteres
+    - Acontece também pq o javascript transforma tudo em objeto
+  - .charAt(index): 
+    - diz para nós qual é o caracter no index que passarmos para ele
+  - .concat(string)
+    - concatena a string (sem modificar a inicial, retorna uma nova string) // mentira, aqui modificou a variável inicial
+  - .indexOf (string [,start])
+    - retorna a posição da string em que encontra, retornando -1 caso não encontre a string dentro da mesma
+    - start é a posição onde queremos começar a varredura
+  - .replace(string, newString)
+    - substitui um trecho da string por uma nova string
+    - Apenas o primeiro encontro (depois veremos como fazer para todas as ocorrências)
+    - retorna uma nova string, não modifica o valor real
+  - slice (start [, end])
+    - funciona igual à de array
+    - Não mostra o ultimo index 
+    - retorna uma substring
+  - split([separador], [limite])
+    - Vai tranformar um a string em um array
+    - p1: Separador é pelo o que queremos separar, se não tiver este elemento na string ele vai retornar um array contendo um único elemento que é a string inteira
+    - O split remove os separadores das strings
+      - ex.: console.log(gui.split('e')) => ['guilh', 'rm', '' ]
+      - ex.: console.log(gui.split('l')) => ['gui', 'herme']
+      - com isso podemos substituir todas as ocorrências por coisas nova usando o join
+        => substiruir todos os 'e's de guilherme por 'a's
+          => gui.split('e').join('a') -> guilharma
+`
+;(function () {
+  var gui = 'guilherme'
+  console.log(gui.length)
+  console.log(gui.charAt(2))
+  console.log(gui.concat(2))
+  console.log(gui)
+  console.log(gui.indexOf('e'))
+  console.log(gui.indexOf('e', 6))
+  console.log(gui.indexOf('j'))
+  console.log(gui.indexOf('lher'))
+  console.log(gui.indexOf('lheu'))
+  console.log(gui.replace('e', 'a'))
+  console.log(gui.replace('e', 'a').replace('e', 'a'))
+  console.log(gui.slice(2))
+  console.log(gui.slice(5, 8))
+  console.log(gui.split('l'))
+  console.log(gui.split('e'))
+  console.log(gui.split('e').join('a'))
+  console.log(gui.split('e', ))
+
+
+})() 
+aulas[16][4] = aula51
+importantes.push(aula51)
+
+
+
+// -- AULA 16.05: Obj String parte 2 --------------------------------------
+let aula52 = `Obj String parte 2
+  - .substring(start [,end])
+    - Basicamente o mesmo que o slice (vai tirar uma string do inicio até o fim se não passar o segundo parâmetro)
+    - A principal diferença é que se o número inicial for maior que o final ele vai inverter e retornar corretamente (inicio <- menor valor; fim <- maior valor)
+    - números negativos ele considera como zero
+  - .toLowerCase() -> nome já diz; não modifica a string inicial
+  - .toUpperCase() -> nome já diz; não modifica a string inicial
+`
+;(function () {
+  let gui = 'guilherme'
+  console.log(gui.substring(2))
+  console.log(gui.substring(2, 5))
+  console.log(gui.substring(5, 2))
+  console.log(gui.substring(5, -2))
+  console.log(gui.substring(5, 0))
+  console.log(gui.substring(0, 5))
+  console.log(gui
+      .charAt(0)
+      .toUpperCase()
+      .concat(gui
+        .substring(1)
+        .toLowerCase()))
+  console.log(gui)
+
+})() 
+aulas[16][5] = aula52
+importantes.push(aula52)
 
