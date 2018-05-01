@@ -1343,7 +1343,7 @@ importantes.push(aula51)
 let aula52 = `Obj String parte 2
   - .substring(start [,end])
     - Basicamente o mesmo que o slice (vai tirar uma string do inicio até o fim se não passar o segundo parâmetro)
-    - A principal diferença é que se o número inicial for maior que o final ele vai inverter e retornar corretamente (inicio <- menor valor; fim <- maior valor)
+    - A principal diferença é que se o número inicial for maior que o final ele vai pegar do fim para o início
     - números negativos ele considera como zero
   - .toLowerCase() -> nome já diz; não modifica a string inicial
   - .toUpperCase() -> nome já diz; não modifica a string inicial
