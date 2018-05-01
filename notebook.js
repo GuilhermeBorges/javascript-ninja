@@ -16,7 +16,7 @@ aulas[12] = {}
 aulas[13] = {}
 aulas[14] = {}
 aulas[15] = {}
-// aulas[16] = {}
+aulas[16] = {}
 // aulas[17] = {}
 // aulas[18] = {}
 // aulas[19] = {}
@@ -1084,14 +1084,108 @@ importantes.push(aula44)
 // =========================================================================
 
 // -- AULA 15.01: Reduce e REduce RIgght --------------------------------------
-let aula45 = `REDUCE e REDUCERIGHT
+let aula45 = `JS NO BROWSER
+  - É sempre bom usar uma tag script pegando um arquivo pq a segunda vez que formos carregar a página irá pegar da memória
+  - Escopo:
+    - Estávamos sempre usando uma IIFE no script e o problema 
 `
 aulas[15][1] = aula45
-importantes.push(aula45)
+// importantes.push(aula45)
 
 // -- AULA 15.02: Reduce e REduce RIgght --------------------------------------
-let aula46 = `REDUCE e REDUCERIGHT
+let aula46 = `THIS
+  - Aparece em dois lugares:
+    1) métodos de objetos
+      - Referencia ao próprio objeto
+    2) Funções
+      - Pode ter dois valores
+        1) referência ao objeto global (window dentro do browser , se for no node chamase global)
+        2) referencia ao aobjeto instânciado
+          - Podemos criar construtores no Js
+          function MyConstructor () {
+            this.prop1 = 'prop1'
+            this.prop2 = 'prop2'
+          }
+          console.log(MyConstructor()) // vai undefined pq não retorna nada
+            -- Ao chamar o construtor como uma função (sem adicionar o new) o this referencia ao objeto global, permitindo com que as coisas como estas sejam feitas:
+              console.log(prop1) --> 'prop1' 
+              console.log(global.prop1) --> 'prop1' 
+          console.log(new MyConstructor()) //Myconstructor { prop1: 'prop1', prop2: 'prop2'}
+          {} === {} -> Retorna false pq sempre é atribuido um valor diferente para cada objeto
+          new Car() === new Car() -> Retorna false também
+
+  - Escopo       
+    var x = 2
+    console.log(x) --> 2
+    console.log(global.x) --> undefined
+    y = 3
+    console.log(global.y) --> 3
+     -- Tudo que eu não declaro é pendurado na variável global (se fosse nobrowser seria a variável window)
+        
+
 `
+
+;((function () {
+  var myObject = {
+    myProperty: 1,
+    init: function () {
+      return this // Seria a mesma coisa de retornar o myObject
+      // Posso retornar this.myProperty => 1
+    }
+  }
+  console.log(myObject.init())
+  console.log(global)
+})())
+
+var newObj = new Object()
+console.log('newObject', newObj)
+
+function MyConstructor () {
+  this.prop1 = 'prop1'
+  this.prop2 = 'prop2'
+}
+
+console.log(MyConstructor()) // vai undefined pq não retorna nada
+console.log(prop1) // vai undefined pq não retorna nada
+console.log(new MyConstructor())
+
+var x = 2
+console.log(x)
+console.log(global.x)
+y = 3
+console.log(global.y)
+
 aulas[15][2] = aula46
 importantes.push(aula46)
+
+// -- AULA 15.03: arugments --------------------------------------
+let aula47 = `ARGUMENTS
+  - É um objeto arraylike (funciona como array mas não é um array, pelo o console.log é um Iterator)
+`
+
+;((function () {
+  function myFunction (arg1, arg2) {
+    return arguments
+  }
+  console.log(myFunction())
+  console.log(myFunction(1, 2))
+})())
+aulas[16][1] = aula47
+// importantes.push(aula47)
+
+// =========================================================================
+// ==========================   AULA 15 THIS  ==================================
+// =========================================================================
+
+// -- AULA 16.01: Reduce e REduce RIgght --------------------------------------
+let aula48 = `REDUCE e REDUCERIGHT
+`
+aulas[16][1] = aula48
+// importantes.push(aula48)
+
+// -- AULA 16.02: Reduce e REduce RIgght --------------------------------------
+let aula49 = `REDUCE e REDUCERIGHT
+`
+aulas[16][2] = aula49
+// importantes.push(aula49)
 
