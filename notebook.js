@@ -17,8 +17,8 @@ aulas[13] = {}
 aulas[14] = {}
 aulas[15] = {}
 aulas[16] = {}
-// aulas[17] = {}
-// aulas[18] = {}
+aulas[17] = {}
+aulas[18] = {}
 // aulas[19] = {}
 // aulas[20] = {}
 // aulas[21] = {}
@@ -1368,3 +1368,146 @@ let aula52 = `Obj String parte 2
 aulas[16][5] = aula52
 importantes.push(aula52)
 
+
+// =========================================================================
+// ====   AULA 17 EXPRESSÕES REGULARES  ====================================
+// =========================================================================
+
+// -- AULA 17.01: EXPRESSÕES REGULARES 1/3 --------------------------------------
+let aula53 = `EXPRESSÕES REGULARES 1/3
+  - Regex servem basicamente para manipular strings
+    - Até agora usamos os loops e etc
+    - Podemos fazer essas manipulações utilizando REGEX
+  - É um itpo primitivo do JS como números, bollean e etc
+  - são duas barras /expressão/flags
+    - flags:
+      -> g : todas as ocorrências (global)
+      -> i : ignorando maiúscula e minúscula (ignore case)
+  - Obejto RegExp()
+  - O objeto string tem uma propriedade chamada .match() que recebe uma regex e retorna a aplicação desta regex na string
+    - ex.: console.log(myText.match(myRegex))
+`
+
+;(function () {
+  let myText = 'Menos desculpas e mais action. Ninguém lembra do médio, foque no excelente. Busque o next level. Bora pra action. Você tá realmente obcecado pelos seus sonhos? Bora pra action. Não adianta ter conhecimento se você não tem action. Busque o next level. Menos desculpas e mais action. O inconformismo é o combustível da alta performance. Bora pra action. Busque o next level. Você nunca vai estar pronto então comece agora. Se é pra entrar no jogo, vai all-in. O inconformismo é o combustível da alta performance. Você tá realmente obcecado pelos seus sonhos? Bora pra action. Se você não vê a oportunidade, ela passa.'
+  let myRegex = /de/gi
+  console.log(myText.match(myRegex))
+})()
+
+aulas[17][1] = aula53
+importantes.push(aula53)
+
+// -- AULA 17.02: EXPRESSÕES REGULARES 2/3 --------------------------------------
+let aula54 = `EXPRESSÕES REGULARES 2/3
+  - Termos
+    -> \\: caractere de escape
+    -> \\w: caracteres alfanuméricos e _
+    -> \\d: números (digits)
+    -> []: Classes de caracteres ou listas
+      - Posso usar o ou como "|" ou apenas colocando dentro da lista [123] = [1|2|3]
+    - (): agrupamemnto de caracteres
+  - Sequências
+    [0-9]: todos os números (igual a \\d)
+    [a-z]: todas as letras minúsculas
+    [A-Z]: tpdas as letras maiúsculas
+    [a-zA-Z0-9]: todas as letras e números
+  - Conseguimos usar isso no método replace
+    - myText.replace(/de/g, 'DE')
+    - deta forma conseguimos substituir todos os de por DE
+    - Ao usar o agrupador () conseguimos dentro do replace referenciar uma captura
+      ex.: console.log('meu texto com vários de pq de é bem legal'
+        .replace(/(d)(e)/g, '$1$1$2$2')) -> meu texto com vários ddee pq ddee é bem legal
+      - Se usarmos sem o parênteses ele substitui por $1$1$2$2 mesmo
+    - $n => n-esima captura
+    - $& => todas as capturas de uma vez só
+      -> são caracteres especiais, não strings (não consigo fazer um .toUpperCase)
+      -> console.log(textoLegal
+          .replace(/(d)(e)/g, function(capturaTotal, d, e) {
+            return (d + e).toUpperCase()
+          }))
+          
+})()
+
+`
+
+;(function () {
+  let myText = 'Menos desculpas e mais action. Ninguém lembra do médio, foque no excelente. Busque o next level. Bora pra action. Você tá realmente obcecado pelos seus sonhos? Bora pra action. Não adianta ter conhecimento se você não tem action. Busque o next level. Menos desculpas e mais action. O inconformismo é o combustível da alta performance. Bora pra action. Busque o next level. Você nunca vai estar pronto então comece agora. Se é pra entrar no jogo, vai all-in. O inconformismo é o combustível da alta performance. Você tá realmente obcecado pelos seus sonhos? Bora pra action. Se você não vê a oportunidade, ela passa 2000 km/h.'
+  let myRegex = /\w/
+  console.log(myText.match(/\w/g)) // retorna todas os chars 
+  console.log(myText.match(/\d/g)) 
+  console.log(myText.match(/\d\d/g)) 
+  console.log(myText.match(/\d\d/g)) 
+  console.log(myText.match(/\d\d\d/g)) 
+  console.log(myText.match(/[da|de]/g)) 
+  console.log(myText.match(/(da)|(de)/g)) 
+  console.log(myText.match(/(or)|(ra)/g)) 
+  console.log(myText.match(/[0-9A-Za-z]/)) 
+  console.log(myText.replace('de', 'DE')) 
+  console.log(myText.replace(/você/gi, 'VOCÊ')) 
+  let textoLegal = 'meu texto com vários de pq de é bem legal'
+  console.log(textoLegal
+    .replace(/(d)(e)/g, '$1$1$2$2'))
+  console.log(textoLegal
+    .replace(/(d)(e)/g, function(capturaTotal, d, e) {
+      return (d + e).toUpperCase()
+    }))
+  console.log('Guilherme'
+    .replace(/(\w)(\w)/g, (capturaTotal, letra1, letra2) => letra1.toLowerCase() + letra2.toUpperCase()
+    ))
+})()
+
+aulas[17][2] = aula54
+importantes.push(aula54)
+
+// -- AULA 17.03: EXPRESSÕES REGULARES  3/3 --------------------------------------
+let aula55 = `EXPRESSÕES REGULARES 3/3
+
+`
+
+;(function () {
+  let myVar = 'bananinha'
+})()
+
+aulas[17][3] = aula55
+importantes.push(aula55)
+
+
+// =========================================================================
+// ====   AULA 18 CONTINUACAO EXPRESSÕES REGULARES  ====================================
+// =========================================================================
+
+// -- AULA 18.01: EXPRESSÕES REGULARES  --------------------------------------
+let aula56 = `EXPRESSÕES REGULARES 1/3
+
+`
+
+  ; (function () {
+    let myVar = 'bananinha'
+  })()
+
+aulas[18][1] = aula56
+importantes.push(aula56)
+
+// -- AULA 18.02: EXPRESSÕES REGULARES  --------------------------------------
+let aula57 = `EXPRESSÕES REGULARES 2/3
+
+`
+
+  ; (function () {
+    let myVar = 'bananinha'
+  })()
+
+aulas[18][2] = aula57
+importantes.push(aula57)
+
+// -- AULA 18.03: EXPRESSÕES REGULARES  --------------------------------------
+let aula58 = `EXPRESSÕES REGULARES 3/3
+
+`
+
+  ; (function () {
+    let myVar = 'bananinha'
+  })()
+
+aulas[18][3] = aula58
+importantes.push(aula58)
