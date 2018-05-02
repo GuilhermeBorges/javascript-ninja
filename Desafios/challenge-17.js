@@ -4,6 +4,7 @@
 3. Crie um arquivo index.html e adicione esse script à ele.
 */
 (function () {
+  'use strict'
   /*
   Em todos os exercícios desse desafio, nós vamos utilizar expressões
   regulares! Para isso, iremos usar o texto abaixo. Coloque-o em uma
