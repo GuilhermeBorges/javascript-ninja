@@ -50,7 +50,7 @@
   */
   console.log('\nTrocando de "D" a "h" por "0":');
   console.log(text.substr(55, 100))
-  console.log(text.replace(/[D-h]/g, '0'))
+  console.log(text.replace(/[D-Za-h]/g, '0'))
   console.log(text.substr(55, 100))
 
   /*
