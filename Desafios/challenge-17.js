@@ -59,7 +59,7 @@
   */
   console.log('\nTrocando "A" e "a" por "4":');
   console.log(text.substr(55, 100))
-  console.log(text.replace(/[aA]/g, 4)
+  console.log(text.replace(/[a]/gi, 4)
     .substr(55, 100))
   console.log(text.substr(55, 100))
 
