@@ -1373,8 +1373,8 @@ importantes.push(aula52)
 // ====   AULA 17 EXPRESSÕES REGULARES  ====================================
 // =========================================================================
 
-// -- AULA 17.01: EXPRESSÕES REGULARES 1/3 --------------------------------------
-let aula53 = `EXPRESSÕES REGULARES 1/3
+// -- AULA 17.01: EXPRESSÕES REGULARES 1/5 --------------------------------------
+let aula53 = `EXPRESSÕES REGULARES 1/5
   - Regex servem basicamente para manipular strings
     - Até agora usamos os loops e etc
     - Podemos fazer essas manipulações utilizando REGEX
@@ -1397,8 +1397,8 @@ let aula53 = `EXPRESSÕES REGULARES 1/3
 aulas[17][1] = aula53
 importantes.push(aula53)
 
-// -- AULA 17.02: EXPRESSÕES REGULARES 2/3 --------------------------------------
-let aula54 = `EXPRESSÕES REGULARES 2/3
+// -- AULA 17.02: EXPRESSÕES REGULARES 2/5 --------------------------------------
+let aula54 = `EXPRESSÕES REGULARES 2/5
   - Termos
     -> \\: caractere de escape
     -> \\w: caracteres alfanuméricos e _
@@ -1459,55 +1459,55 @@ let aula54 = `EXPRESSÕES REGULARES 2/3
 aulas[17][2] = aula54
 importantes.push(aula54)
 
-// -- AULA 17.03: EXPRESSÕES REGULARES  3/3 --------------------------------------
-let aula55 = `EXPRESSÕES REGULARES 3/3
-
-`
-
-;(function () {
-  let myVar = 'bananinha'
-})()
-
-aulas[17][3] = aula55
-importantes.push(aula55)
-
 
 // =========================================================================
 // ====   AULA 18 CONTINUACAO EXPRESSÕES REGULARES  ====================================
 // =========================================================================
 
 // -- AULA 18.01: EXPRESSÕES REGULARES  --------------------------------------
-let aula56 = `EXPRESSÕES REGULARES 1/3
+let aula55 = `EXPRESSÕES REGULARES 3/5
+ -> \\s: representa espaços em branco (também faz com quebra de linha)
+ -> \\n: faz o match com quebra de linha
+ -> \\t: faz o match com tabulação de texto
+ -> . : qualque caracter sem ser quebra de linha
+ => Repetidores (vamos ver daqui a pouco)
+  -> caracteres qeu fazem repetir os rolê
+    \w\w\w\w\w\w\w\w\w\w => vai casar com o que tiver 10 letas
 
 `
-
-  ; (function () {
-    let myVar = 'bananinha'
-  })()
-
-aulas[18][1] = aula56
-importantes.push(aula56)
+aulas[18][1] = aula55
+importantes.push(aula55)
 
 // -- AULA 18.02: EXPRESSÕES REGULARES  --------------------------------------
-let aula57 = `EXPRESSÕES REGULARES 2/3
-
+let aula56 = `EXPRESSÕES REGULARES 4/5
+  => Negação
+  -> ˆ: tem que ser dentro da lista não fora 
+    [^abc] => fazemos um match com tudo que não for abc 
+  -> \W : usando o maiúsculo via fazer o match com qualquer caracter desde que não seja um alfanumérico (ou seja, serão a virgula, espaços, underlines e etc)
+  -> \D : qualquer caracter que não seja número
+  -> \S : qualquer caracter menos os represnetados por espaço em branco
+    -> [\S\s] -> pega todo os caracteres
+  
+  => Repetidores
+    -> \w\w\w\w\w\w\w\w\w\w => vai casar com o que tiver 10 letas
+    -> {N, M} => intervalo: item anterior ao menos N vezes o no máximo M vezes
+      -> \d{2, 4} (núemros que começam com dois dígitos e no máximo 4 dígitos)
+    -> ? => faz o anterior ser opcional, semelhante a {0, 1}
+    -> + => uma ou mais ocorrência do item anterior
+    -> * => zero ou mais ocorrência do item anterior
 `
 
-  ; (function () {
-    let myVar = 'bananinha'
-  })()
-
-aulas[18][2] = aula57
-importantes.push(aula57)
+aulas[18][2] = aula56
+importantes.push(aula56)
 
 // -- AULA 18.03: EXPRESSÕES REGULARES  --------------------------------------
-let aula58 = `EXPRESSÕES REGULARES 3/3
-
+let aula57 = `EXPRESSÕES REGULARES 5/5
+  IN
 `
 
   ; (function () {
     let myVar = 'bananinha'
   })()
 
-aulas[18][3] = aula58
-importantes.push(aula58)
+aulas[18][3] = aula57
+importantes.push(aula57)
