@@ -111,8 +111,10 @@
   console.log('\nFazer replace dos textos das tags:')
   function replaceTags (texto) {
     const regex = /<(\w+)>(.+)<\/(\1)>/gi
+    // const regex2 = /<(\w+)>([^<]+)<\/w+>/gi // regex que o prof fez mas não funcionou para mim
     // console.log(texto.match(regex))
-    return texto.replace(regex, (total, startTag, content, endTag) => `<${startTag}>O texto dentro da tag "${startTag}" é "${content}"</${endTag}>\n`)
+    // return texto.replace(regex2, (total, startTag, content, endTag) => `<${startTag}>O texto dentro da tag "${startTag}" é "${content}"</${endTag}>\n`)
+    return texto.replace(regex, '<$1>O texto dentro da tag "$1" é "$2"</$1>\n')
   }
   texto = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
   console.log(replaceTags(texto))
