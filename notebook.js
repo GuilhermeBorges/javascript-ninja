@@ -1541,7 +1541,8 @@ importantes.push(aula59)
 
 // -- AULA 19.03: O Objeto RegExp() --------------------------------------
 let aula60 = `
-
+  - ˆ: inicio de string quando fora de uma lista ([ˆda] é uma negação)
+    - ˆ<p> => string começa com ˆ<p> 
 `
 
 ; (function () {
