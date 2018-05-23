@@ -51,7 +51,8 @@
 
   console.log('\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":');
   function junhoJulho (string) {
-    let regex = /junho|julho/gi
+    // let regex = /junho|julho/gi
+    let regex = /ju[nl]ho/gi // Resolução sensacional do professor
     return string.match(regex)
   }
   let texto = 'Os meses de janeiro, junho e julho começam com a letra j.'
