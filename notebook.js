@@ -19,7 +19,7 @@ aulas[15] = {}
 aulas[16] = {}
 aulas[17] = {}
 aulas[18] = {}
-// aulas[19] = {}
+aulas[19] = {}
 // aulas[20] = {}
 // aulas[21] = {}
 // aulas[22] = {}
@@ -1511,3 +1511,41 @@ let aula57 = `EXPRESSÕES REGULARES 5/5
 
 aulas[18][3] = aula57
 importantes.push(aula57)
+
+
+// =========================================================================
+// ====   AULA 19 CONTINUAÇÃO REGEX  ==========================
+// =========================================================================
+
+// -- AULA 19.01: CONHECENDO OUTROS SIMBOLOS USADOS EM UMA REGEX --------------------------------------
+let aula58 = `
+
+`
+
+; (function () {
+  let myVar = 'bananinha'
+})()
+aulas[19][1] = aula58
+importantes.push(aula58)
+
+// -- AULA 19.02: Métodos de string onde podemos usar regex --------------------------------------
+let aula59 = `
+
+`
+
+; (function () {
+  let myVar = 'bananinha'
+})()
+aulas[19][2] = aula59
+importantes.push(aula59)
+
+// -- AULA 19.03: O Objeto RegExp() --------------------------------------
+let aula60 = `
+
+`
+
+; (function () {
+  let myVar = 'bananinha'
+})()
+aulas[19][3] = aula60
+importantes.push(aula60)
